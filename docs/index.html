@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- @head -->
+    <title>ScrapBean documentation: how to make a scrapbook page</title>
+    <meta name="description" content="How to use ScrapBean: make your first page, shuffle it, tie threads, add stickers and calendars, save a copy as a PDF or web page, and find where your files are kept." />
+    <meta property="og:title" content="ScrapBean documentation" />
+    <meta property="og:description" content="Everything ScrapBean does, in plain words. Start with your first page; it takes about a minute." />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "TechArticle",
+            "headline": "ScrapBean documentation",
+            "description": "How to use ScrapBean, the free scrapbook app: first page, shuffling, threads, stickers, saving copies and where files are kept.",
+            "url": "%PAGE%",
+            "inLanguage": "en",
+            "about": { "@id": "%SITE%/#app" }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "%SITE%/" },
+              { "@type": "ListItem", "position": 2, "name": "Documentation", "item": "%PAGE%" }
+            ]
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <!-- @header -->
+    <main id="main">
+      <div class="doc-head">
+        <h1>Documentation</h1>
+        <p>
+          Everything ScrapBean does, in plain words. You don't need to read any of this to make a page. It's here for
+          the day you wonder what that button does.
+        </p>
+      </div>
+
+      <div class="doc-wrap">
+        <nav class="toc" aria-label="On this page">
+          <h2>On this page</h2>
+          <a href="#start">Your first page</a>
+          <a href="#library">The Library</a>
+          <a href="#reading">Reading a scrapbook</a>
+          <a href="#edit">Edit</a>
+          <a href="#shuffle">Shuffle</a>
+          <a href="#customize">Customize</a>
+          <a href="#import">Bring your own</a>
+          <a href="#page-size">One screen or endless</a>
+          <a href="#threads">Threads</a>
+          <a href="#stickers">Stickers and calendars</a>
+          <a href="#themes">Themes</a>
+          <a href="#desks">Desks and settings</a>
+          <a href="#media">Pictures, video and sound</a>
+          <a href="#plugins">Plugins</a>
+          <a href="#save">Save a copy</a>
+          <a href="#files">Where your files live</a>
+          <a href="#keys">Keys</a>
+        </nav>
+
+        <article class="doc">
+          <section id="start">
+            <h2>Your first page</h2>
+            <p>This takes about a minute, and most of that is choosing a photo.</p>
+            <ol>
+              <li>Open ScrapBean. You land in the Library, which is a shelf. Press <b>New scrapbook</b> and give it a name.</li>
+              <li>Type a note in the row at the bottom and press <kbd>Enter</kbd>. It drops onto the page.</li>
+              <li>Copy a picture from anywhere and press <kbd>Ctrl</kbd> + <kbd>V</kbd> (<kbd>⌘</kbd> + <kbd>V</kbd> on a Mac). Or drag a few files in from a folder.</li>
+              <li>Keep going. Each new thing lands on the page and the whole page rearranges itself to fit one screen.</li>
+              <li>Press the dice if you want a different arrangement. Press it again if you want another.</li>
+            </ol>
+            <p>That's a page. Everything below is optional.</p>
+            <figure class="snap" style="--turn: -0.8deg">
+              <i class="tape" aria-hidden="true"></i>
+              <video src="/media/build.mp4" poster="/media/build.jpg" width="1920" height="1080" muted loop playsinline controls preload="none" aria-label="A page building itself as notes are typed and photos are pasted"></video>
+              <figcaption>Type, paste, type, paste. The page keeps up.</figcaption>
+            </figure>
+          </section>
+
+          <section id="library">
+            <h2>The Library</h2>
+            <p>
+              The Library is the home screen and always opens first. Every scrapbook stands on the shelf with its name,
+              a short description, and a time and place if you gave it one.
+            </p>
+            <ul>
+              <li><b>Click</b> a scrapbook to read it.</li>
+              <li><b>Right-click</b> a scrapbook to open it for editing.</li>
+              <li><b>Type</b> in the search field to find one. The shelf narrows with every letter.</li>
+            </ul>
+            <p>
+              Search looks at names, descriptions, dates, places, page names and anything written on a page. When a match
+              comes from inside a page, it tells you which page. When only one scrapbook is left, <kbd>Enter</kbd> opens
+              it. <kbd>Esc</kbd> clears the search.
+            </p>
+            <figure class="snap" style="--turn: 0.7deg">
+              <i class="tape is-green" aria-hidden="true"></i>
+              <img src="/shots/library-640.webp" srcset="/shots/library-640.webp 640w, /shots/library-1280.webp 1280w" sizes="(min-width: 760px) 680px, 92vw" alt="The Library: ten scrapbooks standing on two wooden shelves, each with a name and a date" width="640" height="400" loading="lazy" decoding="async" />
+            </figure>
+          </section>
+
+          <section id="reading">
+            <h2>Reading a scrapbook</h2>
+            <p>
+              Reading mode is for looking, not changing. Nothing can be moved or removed by accident, which makes it safe
+              to hand the laptop to a relative.
+            </p>
+            <ul>
+              <li>Turn pages with the arrows at the edges of the page, or with <kbd>←</kbd> and <kbd>→</kbd>.</li>
+              <li>Videos play here, and only here. Everywhere else a video is a still picture.</li>
+              <li>Voice notes and songs play when you press them. Nothing starts making noise on its own.</li>
+              <li>A scrapbook can have one song of its own. The reader starts it from a button in the corner.</li>
+            </ul>
+            <p>A page you never arranged by hand is dealt into a fresh collage each time the scrapbook is opened.</p>
+          </section>
+
+          <section id="edit">
+            <h2>Edit</h2>
+            <p>Edit is where things get added. Open the menu (the button at the left of the title bar) and choose Edit, or right-click a scrapbook on the shelf.</p>
+            <ul>
+              <li><b>Add:</b> paste, drop files in, or write in the row at the bottom. The row also has a button each for pictures, videos and sound.</li>
+              <li><b>Pick:</b> click a scrap to select it.</li>
+              <li><b>Move:</b> drag it. It stops at the edge of the page, so nothing is ever cut off.</li>
+              <li><b>Turn and resize:</b> use the two handles on a selected scrap.</li>
+              <li><b>Rewrite a note:</b> select it and press <kbd>Enter</kbd>.</li>
+              <li><b>Remove:</b> select it and press <kbd>Delete</kbd>.</li>
+              <li><b>Pages:</b> add, name and switch pages from the menu.</li>
+            </ul>
+            <p class="note">Paste fast. The page is built for people who dump twenty things in and sort it out never.</p>
+          </section>
+
+          <section id="shuffle">
+            <h2>Shuffle</h2>
+            <p>
+              Shuffle is the dice in the add row (it is in the menu too). Each press tosses every scrap into a new
+              arrangement that still fits the screen. Sizes change, tilts change, notes resize their writing to match.
+            </p>
+            <p>
+              Two scraps tied with a <a href="#threads">thread</a> stay next to each other through a shuffle, so a caption
+              doesn't wander off from its photo.
+            </p>
+            <p>
+              Once you arrange a page by hand in Customize, it keeps that arrangement. Shuffle it and you are back to
+              the dice.
+            </p>
+            <figure class="snap" style="--turn: 1deg">
+              <i class="tape is-pink" aria-hidden="true"></i>
+              <video src="/media/shuffle.mp4" poster="/media/shuffle.jpg" width="1920" height="1080" muted loop playsinline controls preload="none" aria-label="One page shuffled into six different arrangements"></video>
+            </figure>
+          </section>
+
+          <section id="customize">
+            <h2>Customize</h2>
+            <p>
+              Customize is the other half of editing: a panel on the right for arranging by hand and changing how
+              things look. It shows one open section at a time, so it never turns into a wall of sliders.
+            </p>
+            <ul>
+              <li><b>Page:</b> 27 backgrounds, from cork and wood to old paper, a chalkboard, maths squares and an account book.</li>
+              <li><b>Writing:</b> 12 kinds of handwriting.</li>
+              <li><b>Notes:</b> 21 papers, including sticky notes, torn ruled pages, legal pad, receipts and coffee-stained paper.</li>
+              <li><b>Holding things down:</b> 14 tapes, plus pins, paper clips, bulldog clips, staples and pegs.</li>
+              <li><b>Borders:</b> a picture can have a border that follows its own outline: tight, rounded like a sticker, or rough like torn paper.</li>
+              <li><b>Your own things:</b> see <a href="#import">Bring your own</a>, just below.</li>
+            </ul>
+            <p>The menu and the Customize panel can each be made wider or narrower by dragging their inner edge. Double-click the edge to put it back.</p>
+          </section>
+
+          <section id="import">
+            <h2>Bring your own</h2>
+            <p>Customize can take in your own files. Each section that has a shelf of choices also has a button for adding yours.</p>
+            <div class="scroll">
+              <table>
+                <thead><tr><th>What</th><th>Files</th><th>Where to add it</th></tr></thead>
+                <tbody>
+                  <tr><td>Fonts</td><td>TTF, OTF, WOFF, WOFF2</td><td>Writing, "Add a font from your computer"</td></tr>
+                  <tr><td>Stickers and drawings</td><td>PNG, JPEG, GIF, WebP, AVIF, BMP, SVG</td><td>Stickers, on the Yours shelf</td></tr>
+                  <tr><td>A page background</td><td>Any of the picture kinds above</td><td>Background, "Use your own picture"</td></tr>
+                  <tr><td>A song for the scrapbook</td><td>MP3, M4A, OGG, WAV, FLAC</td><td>Music, "Add a song"</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p>
+              You can add one file, several at once, or a whole folder ("Add a whole folder" on the Yours shelf).
+              Fonts, pictures and backgrounds go into one pool that all your scrapbooks share, so a font added for
+              one is there for the next. A song belongs to the scrapbook you added it to.
+            </p>
+            <p>
+              <b>Your stuff</b>, at the bottom of Customize, lists everything you have imported. Removing something
+              there does not take it off pages that already use it.
+            </p>
+            <p class="note">A cut-out picture with see-through surroundings gets a sticker-style outline by itself when you add it.</p>
+          </section>
+
+          <section id="page-size">
+            <h2>One screen or endless</h2>
+            <p>Each page is one of two sizes. You choose in Customize, under Page size.</p>
+            <div class="scroll">
+              <table>
+                <thead><tr><th>Size</th><th>What it does</th><th>Good for</th></tr></thead>
+                <tbody>
+                  <tr><td><b>One screen</b></td><td>Everything is dealt to fit the window. Add more and things get smaller.</td><td>Pages you want to see whole</td></tr>
+                  <tr><td><b>Endless</b></td><td>The page runs on downward as far as you fill it. Scraps keep their natural size.</td><td>Long diaries, big collections</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p>
+              Switching between them never moves or removes anything. ScrapBean speaks up when an endless page gets long
+              or crowded enough to slow down or to be awkward to save as a PDF or picture.
+            </p>
+          </section>
+
+          <section id="threads">
+            <h2>Threads</h2>
+            <p>A thread runs from any scrap to any other, pin to pin: a note to a photo, a photo to a video, a voice note to a sticker. Use a few and a page becomes a map of what belongs together.</p>
+            <ol>
+              <li>In Customize, click a scrap.</li>
+              <li>Open Thread and press <b>Tie a thread from here</b>.</li>
+              <li>Click the scrap it should run to.</li>
+            </ol>
+            <p>
+              Threads come in six colours. They follow their scraps when you move or shuffle them, and they are kept in
+              saved web pages and PDFs. Remove a scrap and its threads go with it.
+            </p>
+            <figure class="snap" style="--turn: -1deg">
+              <i class="tape" aria-hidden="true"></i>
+              <video src="/media/threads.mp4" poster="/media/threads.jpg" width="1920" height="1080" muted loop playsinline controls preload="none" aria-label="Threads being tied between notes"></video>
+            </figure>
+          </section>
+
+          <section id="stickers">
+            <h2>Stickers and calendars</h2>
+            <p>There are four shelves of stickers in Customize: simple, doodles, colourful, and stamps. The colourful shelf has about 150, with faces and hands for reacting to things as well as food, school, weather and animals.</p>
+            <p>Any sticker can be made up as a postage stamp, a rubber stamp with your own words, a wax seal, a badge, or a cut-out with a white edge like one peeled from a printed sheet.</p>
+            <p>Your own sticker pictures go on the <b>Yours</b> shelf. That includes <code>.webp</code> stickers saved from a chat app.</p>
+            <h3>Calendar stickers</h3>
+            <p>
+              A calendar sticker shows one month. You will find it on the Stamps shelf. On the page, click a day to circle
+              it and click again to clear it. The arrows in its heading turn to the next month, and circles come back
+              when you return to theirs.
+            </p>
+            <p>Circling works in Edit and Customize. While reading, the calendar just sits there looking organised.</p>
+          </section>
+
+          <section id="themes">
+            <h2>Themes</h2>
+            <p>
+              A theme gives a whole scrapbook one mood. It narrows what the random choices are made from (backgrounds,
+              writing, papers, colours, tape, stickers), so pages stay uneven and hand-made but clearly belong together.
+            </p>
+            <p>
+              The themes are Anime, Manga, Café, Office, Beach, Weekend, Vacation, Rainforest, Desert, Garden, Night out,
+              Vintage, School days, Maths, and Bills and money. You can also make your own by ticking what belongs in
+              it. Your theme is then offered for every scrapbook.
+            </p>
+          </section>
+
+          <section id="desks">
+            <h2>Desks and settings</h2>
+            <p>Settings are at the bottom of the menu.</p>
+            <ul>
+              <li><b>Desks:</b> the app itself can be made of five sets of materials. Craft desk (kraft and mustard), Garden shed (seed-packet green and terracotta), Harbour (faded blue canvas and brass), Keepsake tin (blush and rose) and Workshop (grey card and one orange).</li>
+              <li><b>Light and dark:</b> every desk has both.</li>
+              <li><b>Movement:</b> turn it off and it really stops. Pages change at once, panels don't slide, videos wait to be started.</li>
+            </ul>
+            <p>Your scraps and book covers look the same on every desk. Only the furniture changes.</p>
+          </section>
+
+          <section id="media">
+            <h2>Pictures, video and sound</h2>
+            <div class="scroll">
+              <table>
+                <thead><tr><th>Kind</th><th>What works</th><th>Worth knowing</th></tr></thead>
+                <tbody>
+                  <tr><td>Pictures</td><td>JPEG, PNG, WebP, SVG, animated GIF</td><td>Very large pictures are kept as a smaller copy, 3200 pixels on the long side. GIFs are left alone.</td></tr>
+                  <tr><td>Video</td><td>MP4, WebM, MOV</td><td>Silent unless you turn sound on for it in Customize. HEVC video (some phone recordings) does not play.</td></tr>
+                  <tr><td>Sound</td><td>MP3, M4A, OGG, FLAC and similar</td><td>Becomes its own scrap, drawn as bars, a wave or a cassette. Apple Lossless does not play.</td></tr>
+                  <tr><td>Links</td><td>Any web address</td><td>Paste it and it becomes a card you can click.</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p>HEIC and TIFF pictures are not supported. Export them as JPEG first.</p>
+            <p>A picture dragged out of a web page is downloaded and kept inside the scrapbook, so it is still there when the website isn't.</p>
+          </section>
+
+          <section id="plugins">
+            <h2>Plugins</h2>
+            <p>
+              A plugin is a small extra made by someone else that adds commands to the menu. Open the menu, then
+              <b>Plugins</b>. Commands from the plugins you have switched on are listed there, each with the name of
+              the plugin it came from, along with <b>Manage plugins</b>.
+            </p>
+            <h3>Adding and using one</h3>
+            <ol>
+              <li>Choose <b>Manage plugins</b>, then <b>Add a plugin from a folder</b>, and pick the plugin's folder.</li>
+              <li>It arrives switched off, with nothing allowed. Press <b>On</b>.</li>
+              <li>Its commands appear in the menu. Press one.</li>
+              <li>The first time it needs to read or change something, ScrapBean asks you. Choose <b>Allow</b> or <b>Not now</b>.</li>
+            </ol>
+            <figure class="snap" style="--turn: 0.7deg">
+              <i class="tape" aria-hidden="true"></i>
+              <img src="/shots/plugins-allowed-640.webp" srcset="/shots/plugins-allowed-640.webp 640w, /shots/plugins-allowed-1280.webp 1280w" sizes="(min-width: 760px) 680px, 92vw" alt="The Plugins page listing plugins, each with its name and id, On and Off, what it may ask you for, and Remove" width="640" height="400" loading="lazy" decoding="async" />
+              <figcaption>Manage plugins: what each one may ask for. Once you allow something, a button to take it back appears beside it.</figcaption>
+            </figure>
+            <h3>What you may be asked</h3>
+            <div class="scroll">
+              <table>
+                <thead><tr><th>The question</th><th>What the plugin gets if you allow it</th></tr></thead>
+                <tbody>
+                  <tr><td>Read the open page</td><td>The words on the page you have open: its title, notes, captions, link addresses and sticker words</td></tr>
+                  <tr><td>See the pictures on the open page</td><td>Those pictures, one at a time. Not videos or sound</td></tr>
+                  <tr><td>Add to the open page</td><td>It may add notes and pictures, and change the words of notes. It cannot remove anything</td></tr>
+                  <tr><td>Read every scrapbook</td><td>The name, description, date and place of every scrapbook, page names, and every note</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p>
+              Once allowed, a plugin is not asked again for the same thing. To take it back, open Manage plugins and
+              press <b>Stop allowing</b>. Replacing a plugin with a version that asks for more starts it again from
+              nothing allowed.
+            </p>
+            <h3>The rules every plugin lives under</h3>
+            <ul>
+              <li>It has no access to files on your computer and no way to use the internet.</li>
+              <li>It runs only while a command you pressed is running, for at most 15 seconds, and is then shut down. Nothing runs in the background.</li>
+              <li>It can add and change, never remove. Changes are refused while you are only reading a scrapbook.</li>
+              <li>Everything one command changed is taken back by the Undo that appears when it finishes, and only that: anything you did yourself in the meantime stays.</li>
+              <li>A plugin that misbehaves is stopped and says so on the Plugins page. Switch it off and on to give it another go.</li>
+            </ul>
+            <h3>Writing one</h3>
+            <p>
+              A plugin is a folder with a <code>plugin.json</code> that names it and lists what it may ask for, and a
+              JavaScript file that registers its commands. This is a whole plugin:
+            </p>
+            <pre><code>scrapbean.commands.register({
+  id: 'count',
+  title: 'Count the words on this page',
+  async run() {
+    const page = await scrapbean.page.read();
+    const notes = page.scraps.filter((scrap) =&gt; scrap.kind === 'note');
+    await scrapbean.notify(`This page has ${notes.length} notes.`);
+  },
+});</code></pre>
+            <p>
+              ScrapBean comes with five examples to copy from: Word count, Date stamp, Tidy notes, Library count and
+              Picture converter, which makes JPEG, black-and-white or sepia copies of a page's pictures without
+              anything leaving the plugin. The full guide for authors comes with the app.
+            </p>
+            <p class="note is-green">There is no plugin shop yet. A plugin reaches you as a folder, from whoever wrote it.</p>
+          </section>
+
+          <section id="save">
+            <h2>Save a copy</h2>
+            <p>Save a copy is in the menu. It makes something you can send to people who don't have ScrapBean.</p>
+            <ul>
+              <li><b>Web page:</b> the whole scrapbook as a zip. Unzip it and open <code>index.html</code> in any browser. Pictures, video, sound and fonts travel with it.</li>
+              <li><b>PDF:</b> one sheet per page, the same shape as the page on screen.</li>
+              <li><b>Picture:</b> one page as a PNG.</li>
+            </ul>
+            <p>
+              A picture and a PDF can't move, so videos, GIFs and sound become stills. For a picture you can choose how
+              many seconds to wait, which picks the moment they are caught at.
+            </p>
+            <p class="note is-green">A PDF with lots of outlined pictures takes a little while. Wait for the message before you close the app.</p>
+          </section>
+
+          <section id="files">
+            <h2>Where your files live</h2>
+            <p>
+              All your scrapbooks are saved together on your computer: one file called <code>book.json</code> and a
+              <code>media</code> folder of pictures, video and sound beside it. Nothing is uploaded.
+            </p>
+            <div class="scroll">
+              <table>
+                <thead><tr><th>System</th><th>Folder</th></tr></thead>
+                <tbody>
+                  <tr><td>Windows</td><td><code>%APPDATA%\ScrapBean</code></td></tr>
+                  <tr><td>macOS</td><td><code>~/Library/Application Support/ScrapBean</code></td></tr>
+                  <tr><td>Linux</td><td><code>~/.config/ScrapBean</code></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p>To back up, close ScrapBean and copy that folder somewhere safe. To move to a new computer, copy it into the same place there.</p>
+            <p class="note is-pink">Don't keep your own files in the media folder. ScrapBean tidies it when it starts and removes anything no scrapbook uses.</p>
+          </section>
+
+          <section id="keys">
+            <h2>Keys</h2>
+            <div class="scroll">
+              <table>
+                <thead><tr><th>Where</th><th>Key</th><th>What it does</th></tr></thead>
+                <tbody>
+                  <tr><td>Anywhere you can edit</td><td><kbd>Ctrl</kbd> + <kbd>V</kbd> or <kbd>⌘</kbd> + <kbd>V</kbd></td><td>Paste a picture, a link or words onto the page</td></tr>
+                  <tr><td>Add row</td><td><kbd>Enter</kbd></td><td>Put the note on the page. <kbd>Shift</kbd> + <kbd>Enter</kbd> starts a new line.</td></tr>
+                  <tr><td>Reading</td><td><kbd>←</kbd> <kbd>→</kbd></td><td>Turn the page</td></tr>
+                  <tr><td>A selected scrap</td><td><kbd>Enter</kbd></td><td>Rewrite a note</td></tr>
+                  <tr><td>A selected scrap</td><td>Arrow keys</td><td>Nudge it. Hold <kbd>Shift</kbd> for bigger steps.</td></tr>
+                  <tr><td>A selected scrap</td><td><kbd>Delete</kbd></td><td>Remove it</td></tr>
+                  <tr><td>Library search</td><td><kbd>Enter</kbd></td><td>Open the scrapbook, when one is left</td></tr>
+                  <tr><td>Library search</td><td><kbd>Esc</kbd></td><td>Clear the search</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p>Still stuck? The <a href="/#faq">questions on the home page</a> cover the common ones.</p>
+          </section>
+        </article>
+      </div>
+    </main>
+    <!-- @footer -->
+  </body>
+</html>
