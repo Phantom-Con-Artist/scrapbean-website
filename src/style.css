@@ -1,0 +1,14 @@
+/* A starting point only: the app's own paper and ink, so the real design has something true to begin from. */
+:root {
+  --surface: #f4eee2;
+  --ink: #1f1a17;
+  --ink-soft: #6a5f57;
+  font-family: system-ui, sans-serif;
+  color: var(--ink);
+  background: var(--surface);
+}
+body { margin: 0; }
+main { max-width: 34rem; margin: 0 auto; padding: 18vh 1.25rem 4rem; }
+h1 { margin: 1rem 0 0.5rem; font-size: 2.5rem; line-height: 1.1; }
+p { margin: 0 0 1rem; font-size: 1.125rem; line-height: 1.5; }
+.note { color: var(--ink-soft); font-size: 1rem; }
