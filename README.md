@@ -29,7 +29,7 @@ Or from this folder: `npm run dev`, `npm run build`, `npm run preview`.
 
 | Path | What it is |
 | --- | --- |
-| `index.html` | Home: tagline, what it is, who it is for, features, free, questions, coming soon |
+| `index.html` | Home: tagline, what it is, Edit and Customize, who it is for, features, free, questions, coming soon |
 | `docs/index.html` | Documentation, one long page with a list of sections |
 | `about/index.html` | About and credits |
 | `404.html` | The page shown for a wrong address |
@@ -37,6 +37,7 @@ Or from this folder: `npm run dev`, `npm run build`, `npm run preview`.
 | `site.config.ts` | Address, page list and downloads |
 | `vite.config.ts` | Builds the pages; also writes `sitemap.xml`, `robots.txt` and the questions' search data |
 | `src/` | The stylesheet and the script (video play and pause, the headline shuffle, the docs section marker) |
+| `scripts/pictures.py` | Makes `public/art/` and `public/shots/` from the drawings and screenshots, and shrinks video posters |
 | `public/art/` | The hand-drawn pictures, from `assets/hand-drawn/` at the root, cropped and saved as WebP |
 | `public/shots/` | Screenshots of the real app, from `promotion/screens/`, at 640 and 1280 pixels wide |
 | `public/media/` | Feature videos, posters and brand stills, made by `scrapbean-videos/` |
@@ -58,3 +59,15 @@ Or from this folder: `npm run dev`, `npm run build`, `npm run preview`.
 
 Some sample photos in the screenshots are CC BY and their authors are named on the About page. Keep that list
 when changing which screenshots are shown; the full list is in `promotion/CREDITS.md`.
+
+## Refreshing the pictures and videos
+
+After the app's look changes, from the repository root:
+
+```sh
+npm run build                     # the app, which is what gets filmed
+npm run videos:capture            # films every clip
+npm run videos:render             # writes the videos and posters into public/media/
+# rebuild promotion/screens (see promotion/README.md), then promotion/make/modes.mjs for the Edit and Customize pictures
+python3 scrapbean-website/scripts/pictures.py
+```

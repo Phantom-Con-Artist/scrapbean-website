@@ -34,6 +34,8 @@ h1, h2, h3, p, ul, ol, dl, dd, figure { margin: 0; }
 ul, ol { padding: 0; list-style: none; }
 a { color: inherit; text-underline-offset: 0.2em; text-decoration-thickness: 1.5px; }
 a:hover { text-decoration-style: wavy; }
+::selection { background: var(--pop); color: var(--ink); }
+p, li, figcaption { text-wrap: pretty; }
 :focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; border-radius: 4px; }
 .is-mat :focus-visible, .mat :focus-visible { outline-color: var(--cream); }
 
@@ -45,6 +47,12 @@ a:hover { text-decoration-style: wavy; }
 .doodle.is-cut, .mat .doodle, .is-mat .doodle, .is-cork .wall .doodle {
   filter: drop-shadow(2.5px 0 0 #fff) drop-shadow(-2.5px 0 0 #fff) drop-shadow(0 2.5px 0 #fff) drop-shadow(0 -2.5px 0 #fff) drop-shadow(0 3px 3px rgb(20 10 0 / 0.35));
 }
+
+/* A sticker from the app's own sheet, with its white cut edge. */
+.sticker { position: absolute; pointer-events: none; user-select: none; filter: drop-shadow(2px 0 0 #fff) drop-shadow(-2px 0 0 #fff) drop-shadow(0 2px 0 #fff) drop-shadow(0 -2px 0 #fff) drop-shadow(0 3px 3px rgb(20 10 0 / 0.35)); }
+.hero-scissors { right: 3.2%; bottom: 5%; width: clamp(40px, 4.4vw, 68px); rotate: 24deg; }
+.hero-pencil { right: 9%; bottom: 3.5%; width: clamp(36px, 4vw, 60px); rotate: -18deg; }
+.faq-cup { position: static; display: block; width: 76px; margin-top: 28px; rotate: -8deg; }
 
 /* The main button: a block of mustard enamel with a darker lip, as in the app. */
 .button {
@@ -153,6 +161,14 @@ h3 { font: 700 1.5rem/1.2 var(--ui); letter-spacing: -0.01em; }
 .steps p { margin-top: 8px; color: var(--soft); }
 .step-arrow { z-index: 2; left: -66px; top: -44px; width: 96px; }
 
+/* Three ways in, and what Customize holds */
+#modes { padding-top: 0; }
+.modes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(36px, 4vw, 80px); margin-top: 60px; }
+.modes h3 { margin-top: 22px; }
+.modes p { margin-top: 8px; color: var(--soft); }
+.deep-title { margin-top: clamp(56px, 6vw, 88px); font: 700 clamp(1.5rem, 2.4vw, 2rem)/1.2 var(--hand); }
+.deep { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 44px clamp(24px, 3vw, 56px); margin-top: 40px; }
+
 /* The cork wall */
 .is-cork { background: url('/textures/cork.svg'), #c79a63; box-shadow: inset 0 12px 14px -12px rgb(40 25 10 / 0.55), inset 0 -12px 14px -12px rgb(40 25 10 / 0.55); }
 .is-cork .lead { width: fit-content; max-width: min(100%, 44rem); padding: 30px 34px 32px; background: var(--grain), var(--sheet); box-shadow: var(--drop); rotate: -0.6deg; border-radius: 3px; }
@@ -222,14 +238,19 @@ h3 { font: 700 1.5rem/1.2 var(--ui); letter-spacing: -0.01em; }
 
 /* Download */
 #download { padding-top: 20px; }
+/* The three cards stand on a plank, like the scrapbooks on the app's shelf. */
+.gets { position: relative; padding-bottom: 30px; }
+.gets::after { content: ''; position: absolute; left: -1.5%; right: -1.5%; bottom: 0; height: 18px; border-radius: 3px; background: url('/textures/wood.svg'), #a9794a; box-shadow: inset 0 2px 0 rgb(255 255 255 / 0.25), inset 0 -3px 0 rgb(40 25 10 / 0.3), 0 10px 14px -6px rgb(40 25 10 / 0.6); }
 /* On a wide screen the questions sit beside their heading instead of under it. */
 @media (min-width: 1100px) {
   #faq { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.5fr); align-items: start; gap: clamp(40px, 6vw, 110px); }
   #faq .faqs { margin-top: 0; }
   #faq .lead { position: sticky; top: 28px; }
+  /* A ring where the cup stood. */
+  #faq { background: url('/textures/coffee-ring.svg') left calc(var(--side) + 110px) top 330px / 170px no-repeat; }
 }
-.gets { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; margin-top: 44px; }
-.get { display: grid; justify-items: center; gap: 14px; padding: 30px 20px 26px; background: var(--grain), var(--sheet); border-radius: 4px; box-shadow: var(--drop); text-align: center; rotate: -0.7deg; }
+.gets { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: end; gap: clamp(18px, 3vw, 56px); margin-top: 44px; }
+.get { display: grid; justify-items: center; gap: 14px; padding: 34px 20px 28px; background: var(--grain), var(--sheet); border-radius: 4px 4px 0 0; box-shadow: var(--drop); text-align: center; transform-origin: bottom center; rotate: -0.7deg; }
 .get:nth-child(2) { rotate: 0.6deg; }
 .get:nth-child(3) { rotate: -0.3deg; }
 .get small { font: 500 1rem/1.4 var(--hand); color: var(--soft); }
@@ -297,9 +318,10 @@ code { padding: 1px 6px; border-radius: 4px; background: rgb(40 25 10 / 0.08); f
 
 @media (max-width: 960px) {
   .mat { grid-template-columns: minmax(0, 1fr); gap: 44px; }
-  .hero-arrow, .step-arrow, .wall-tree, .wall-cat, .drawer-flowers { display: none; }
+  .hero-arrow, .step-arrow, .wall-tree, .wall-cat, .drawer-flowers, .hero-scissors, .hero-pencil { display: none; }
   .lead-clouds { position: static; width: 150px; margin: -20px 0 14px auto; }
   .steps { grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 52px 36px; }
+  .modes { grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 52px 36px; }
   .free { grid-template-columns: minmax(0, 1fr); }
   .receipt { max-width: 340px; }
   .doc-wrap { grid-template-columns: minmax(0, 1fr); gap: 32px; }
@@ -314,7 +336,9 @@ code { padding: 1px 6px; border-radius: 4px; background: rgb(40 25 10 / 0.08); f
   .top nav a { padding: 6px 8px; }
   .mat { border-radius: 18px; }
   .mat::after { inset: 7px; border-radius: 12px; }
-  .gets { grid-template-columns: minmax(0, 1fr); }
+  .gets { grid-template-columns: minmax(0, 1fr); padding-bottom: 0; }
+  .gets::after { display: none; }
+  .get { border-radius: 4px; }
   .shows { grid-template-columns: minmax(0, 1fr); }
   .lead-memories { right: -6px; top: -50px; width: 130px; }
   .is-cork .lead { padding: 26px 22px; }
@@ -330,6 +354,12 @@ code { padding: 1px 6px; border-radius: 4px; background: rgb(40 25 10 / 0.08); f
   *, *::before, *::after { transition: none !important; }
 }
 
+@media (max-width: 1200px) {
+  .deep { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 560px) {
+  .deep { grid-template-columns: minmax(0, 1fr); }
+}
 /* Large and very large screens: the type and the gaps grow so the page still fills the glass. */
 @media (min-width: 1700px) {
   body { font-size: 1.1875rem; }
@@ -342,8 +372,10 @@ code { padding: 1px 6px; border-radius: 4px; background: rgb(40 25 10 / 0.08); f
   .free-words h2, .free-words .free-face { grid-column: 1 / -1; }
   .free-words h2 { max-width: none; margin-bottom: 8px; }
 }
+@media (min-width: 1500px) {
+  .shows { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
 @media (min-width: 2300px) {
-  .shows { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   body { font-size: 1.375rem; }
   .wall { grid-template-columns: repeat(auto-fill, minmax(480px, 1fr)); }
   .deal { font-size: 6rem; }
