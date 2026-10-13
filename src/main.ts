@@ -1,7 +1,3 @@
-import '@fontsource-variable/bricolage-grotesque/wght.css';
-import '@fontsource-variable/shantell-sans/wght.css';
-import './style.css';
-
 const calm = window.matchMedia('(prefers-reduced-motion: reduce)');
 
 // Videos are silent loops of the app. They play while they are on screen and rest when they are not.

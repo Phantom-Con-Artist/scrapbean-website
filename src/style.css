@@ -1,3 +1,6 @@
+@import '@fontsource-variable/bricolage-grotesque/wght.css';
+@import '@fontsource-variable/shantell-sans/wght.css';
+
 /* The site is a craft desk seen from above: paper, a green cutting mat, a cork wall and a kraft folder.
    Colours, textures and stationery are the ones the app itself uses. */
 :root {
