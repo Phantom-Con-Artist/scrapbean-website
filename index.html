@@ -377,6 +377,7 @@
             <li>Videos, GIFs and sound</li>
             <li>Endless pages</li>
             <li>Web page, PDF and picture copies</li>
+            <li>Plugins</li>
           </ul>
           <p><a class="more" href="/docs/">Read how each one works in the documentation</a></p>
         </div>
@@ -413,6 +414,57 @@
         </div>
       </section>
 
+      <section class="band" id="plugins" aria-labelledby="plugins-title">
+        <div class="lead">
+          <h2 id="plugins-title">Plugins, kept in a box</h2>
+          <p>
+            A plugin is a small extra somebody else wrote. It adds a command to the menu: count the words on a page, stamp
+            today's date, make a black-and-white copy of your photos. You add one from a folder, and take it out just as easily.
+          </p>
+          <p>Other people's code on your computer deserves a little suspicion. So ScrapBean supplies it for you.</p>
+        </div>
+
+        <div class="modes">
+          <article>
+            <figure class="snap" style="--turn: -0.9deg">
+              <i class="tape" aria-hidden="true"></i>
+              <img src="/shots/plugins-picture-converter-640.webp" srcset="/shots/plugins-picture-converter-640.webp 640w, /shots/plugins-picture-converter-1280.webp 1280w" sizes="(min-width: 960px) 30vw, 92vw" alt="A dinner page after the Picture converter plugin ran: a black-and-white copy of the family photo sits beside the original, with a message offering Undo" width="640" height="400" loading="lazy" decoding="async" />
+            </figure>
+            <h3>It does one thing, when you ask</h3>
+            <p>A plugin sleeps until you press its command, gets fifteen seconds, and is switched off again the moment it finishes. Whatever it changed comes with one Undo.</p>
+          </article>
+          <article>
+            <figure class="snap" style="--turn: 0.8deg">
+              <i class="tape is-pink" aria-hidden="true"></i>
+              <img src="/shots/plugins-question-640.webp" srcset="/shots/plugins-question-640.webp 640w, /shots/plugins-question-1280.webp 1280w" sizes="(min-width: 960px) 30vw, 92vw" alt="A question from the app: Let Word count read the open page? It explains exactly what the plugin would see, with buttons Not now and Allow" width="640" height="400" loading="lazy" decoding="async" />
+            </figure>
+            <h3>It asks before it looks</h3>
+            <p>The first time a plugin wants to read a page, see a picture or add something, you get a plain question that says exactly what it would see. "Not now" is a perfectly good answer.</p>
+          </article>
+          <article>
+            <figure class="snap" style="--turn: -0.6deg">
+              <i class="tape is-green" aria-hidden="true"></i>
+              <img src="/shots/plugins-allowed-640.webp" srcset="/shots/plugins-allowed-640.webp 640w, /shots/plugins-allowed-1280.webp 1280w" sizes="(min-width: 960px) 30vw, 92vw" alt="The Plugins page: each plugin with its name and id, an On and Off switch, what it may ask you for, and a Remove button" width="640" height="400" loading="lazy" decoding="async" />
+            </figure>
+            <h3>You can change your mind</h3>
+            <p>One page lists every plugin, what you have let it do, and a button to take each thing back. Switch it off, or remove it and everything it kept goes with it.</p>
+          </article>
+        </div>
+
+        <div class="bring box">
+          <h3>What a plugin cannot do, however politely it asks</h3>
+          <ul class="tags">
+            <li>Open or save files on your computer</li>
+            <li>Use the internet, at all</li>
+            <li>See pages you don't have open, unless you allow it</li>
+            <li>Delete anything</li>
+            <li>Run when you haven't pressed it</li>
+            <li>See what another plugin is doing</li>
+          </ul>
+          <p>We didn't take this on trust. ScrapBean is tested against plugins written to break out, flood it, hang it and lie to it. <a href="/docs/#plugins">How plugins work, and how to write one.</a></p>
+        </div>
+      </section>
+
       <section class="band is-mat" id="free" aria-labelledby="free-title">
         <div class="free">
           <div class="receipt">
@@ -439,7 +491,7 @@
             </p>
             <p>
               The honest small print: ScrapBean is free, but it is not open source. The app's code stays in our drawer.
-              A way to add plugins is planned, so you will be able to bolt on your own bits later.
+              Plugins are how you bolt on your own bits: anyone can write one, and they are plain JavaScript.
             </p>
           </div>
         </div>
@@ -490,11 +542,15 @@
           </details>
           <details class="faq">
             <summary>Is ScrapBean open source?</summary>
-            <p>No. The app is free to use, but its code is closed. A plugin system is planned so people can extend it.</p>
+            <p>No. The app is free to use, but its code is closed. You can extend it with plugins, which anyone can write.</p>
           </details>
           <details class="faq">
-            <summary>When will plugins arrive?</summary>
-            <p>They are planned, and there is no date yet. We would rather be late than promise a Tuesday.</p>
+            <summary>Are plugins safe?</summary>
+            <p>Each plugin runs shut in a box of its own, with no access to your files and no way to use the internet. It does nothing until you press one of its commands, and the first time it wants to read or change anything of yours, you are asked. What you allowed can be taken back at any time. No software can promise that nothing will ever go wrong, but a plugin is given very little to go wrong with.</p>
+          </details>
+          <details class="faq">
+            <summary>Can I write my own plugin?</summary>
+            <p>Yes. A plugin is a folder with two files: a short description and a JavaScript file. Five working examples come with ScrapBean, including one that converts pictures. There is no plugin shop yet; you add a plugin from a folder on your computer.</p>
           </details>
         </div>
       </section>

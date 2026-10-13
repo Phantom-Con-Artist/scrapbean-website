@@ -20,7 +20,10 @@ SHOTS = {
     'mode-reading': 'mode-reading', 'mode-edit': 'mode-edit', 'mode-customize-themes': 'mode-customize-themes',
     'mode-customize-backgrounds': 'mode-customize-backgrounds', 'mode-customize-stickers': 'mode-customize-stickers',
     'mode-customize-border': 'mode-customize-border', 'mode-customize-note': 'mode-customize-note', 'mode-save': 'mode-save',
+    'plugins-allowed': 'plugins-allowed', 'plugins-question': 'plugins-question', 'plugins-picture-converter': 'plugins-picture-converter',
 }
+# Pictures of a dialog show the dialog and a little of the page around it, so its words can be read.
+CROPS = {'plugins-question': (400, 230, 1200, 730), 'plugins-allowed': (328, 0, 1288, 600)}
 CLOSE_UPS = {'mode-customize-backgrounds', 'mode-customize-stickers', 'mode-customize-border', 'mode-customize-note'}
 # The strip at the top of a screenshot that holds the window's own buttons.
 TITLE_BAR = 34
@@ -44,8 +47,10 @@ def shots():
     for source, name in SHOTS.items():
         picture = Image.open(screens / f'{source}.png').convert('RGB')
         # Pictures of the whole window keep their top strip; pictures of a page lose it.
-        if name != 'library' and not name.startswith('mode-'):
+        if name != 'library' and not name.startswith(('mode-', 'plugins-')):
             picture = picture.crop((0, TITLE_BAR, picture.width, picture.height))
+        if name in CROPS:
+            picture = picture.crop(CROPS[name])
         # The four close-ups of Customize show the panel and the part of the page beside it, so the panel can be read.
         if name in CLOSE_UPS:
             picture = picture.crop((round(picture.width * 0.44), 0, picture.width, picture.height))
