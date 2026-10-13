@@ -18,7 +18,7 @@ Or from this folder: `npm run dev`, `npm run build`, `npm run preview`.
 
 ## Before publishing
 
-- **Set the address.** `site.config.ts` holds the site's address (`https://scrapbean.app` is a placeholder).
+- **The address.** `site.config.ts` holds the site's address, `https://scrapbean.mavern.in`.
   Canonical links, social cards, the sitemap and `robots.txt` are all written from it. Change it there, or build
   with `SITE_URL=https://your.address npm run website:build`.
 - **Add the downloads.** The same file lists Windows, macOS and Linux. While an entry's `href` is empty its card

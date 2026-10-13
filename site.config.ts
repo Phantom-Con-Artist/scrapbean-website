@@ -3,7 +3,7 @@ export const site = {
   name: 'ScrapBean',
   tagline: 'Dump it. Shuffle it. Done.',
   /** Where the site is published, without a slash at the end. Search engines are told this is the real address. */
-  url: process.env.SITE_URL ?? 'https://scrapbean.app',
+  url: process.env.SITE_URL ?? 'https://scrapbean.mavern.in',
   /** The pages listed in the sitemap, most important first. */
   pages: ['/', '/docs/', '/about/'],
 };
