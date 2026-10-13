@@ -1,20 +1,37 @@
 const calm = window.matchMedia('(prefers-reduced-motion: reduce)');
 
-// Videos are silent loops of the app. They play while they are on screen and rest when they are not.
-// With movement turned down they keep their controls and wait to be started.
+// Videos are silent loops of the app. They play while they are on screen and rest when they are not. The browser's
+// own video bar is taken away (it covered the picture whenever the pointer passed over); each film gets one small
+// button of its own to stop and start it. With movement turned down nothing starts until that button is pressed.
 const films = [...document.querySelectorAll<HTMLVideoElement>('video')];
-if (!calm.matches && 'IntersectionObserver' in window) {
+for (const film of films) {
+  film.controls = false;
+  const button = document.createElement('button');
+  button.type = 'button';
+  button.className = 'film-toggle';
+  const label = () => {
+    button.textContent = film.paused ? 'Play' : 'Pause';
+    button.setAttribute('aria-label', `${film.paused ? 'Play' : 'Pause'}: ${film.getAttribute('aria-label') ?? 'this film'}`);
+  };
+  button.addEventListener('click', () => {
+    // Stopped by hand, a film stays stopped until it is started by hand.
+    if (film.paused) { delete film.dataset.held; void film.play().catch(() => undefined); } else { film.dataset.held = 'yes'; film.pause(); }
+  });
+  film.addEventListener('play', label);
+  film.addEventListener('pause', label);
+  label();
+  film.after(button);
+}
+if (calm.matches) document.documentElement.classList.add('is-calm');
+if ('IntersectionObserver' in window) {
   const watch = new IntersectionObserver((entries) => {
     for (const entry of entries) {
       const film = entry.target as HTMLVideoElement;
-      if (entry.isIntersecting) film.play().catch(() => { film.controls = true; });
-      else film.pause();
+      if (!entry.isIntersecting) film.pause();
+      else if (!calm.matches && !film.dataset.held) void film.play().catch(() => undefined);
     }
   }, { threshold: 0.35 });
-  for (const film of films) {
-    film.controls = false;
-    watch.observe(film);
-  }
+  for (const film of films) watch.observe(film);
 }
 
 // The headline is three scraps, and the dice deals them again: new tilt, new place, new paper.
