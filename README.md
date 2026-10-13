@@ -1,14 +1,14 @@
 # ScrapBean website
 
 The website for ScrapBean, kept in the same repository as the desktop app (which lives at the repository root).
-It is a plain static site built with Vite. Right now it is a one-page starting point.
+It is a plain static site built with Vite: three pages of ordinary HTML, one stylesheet and a small script.
 
 ## Commands
 
 Run these from the repository root:
 
 ```sh
-npm install              # once; installs the app and the website together
+npm install              # once; installs the app, the website and the videos together
 npm run website:dev      # http://127.0.0.1:5174
 npm run website:build    # writes scrapbean-website/dist
 npm run website:preview  # serves the built site on http://127.0.0.1:5175
@@ -16,19 +16,45 @@ npm run website:preview  # serves the built site on http://127.0.0.1:5175
 
 Or from this folder: `npm run dev`, `npm run build`, `npm run preview`.
 
+## Before publishing
+
+- **Set the address.** `site.config.ts` holds the site's address (`https://scrapbean.app` is a placeholder).
+  Canonical links, social cards, the sitemap and `robots.txt` are all written from it. Change it there, or build
+  with `SITE_URL=https://your.address npm run website:build`.
+- **Add the downloads.** The same file lists Windows, macOS and Linux. While an entry's `href` is empty its card
+  says "Coming soon"; give it a link and the card becomes a download button. The "Coming soon" buttons in
+  `partials/header.html`, `partials/footer.html` and the hero in `index.html` are plain text to change then.
+
 ## What lives where
 
 | Path | What it is |
 | --- | --- |
-| `index.html` | The page |
-| `src/` | Styles and scripts |
-| `public/` | Files served as they are (the ScrapBean mark) |
+| `index.html` | Home: tagline, what it is, who it is for, features, free, questions, coming soon |
+| `docs/index.html` | Documentation, one long page with a list of sections |
+| `about/index.html` | About and credits |
+| `404.html` | The page shown for a wrong address |
+| `partials/` | The head, top bar and foot shared by every page; written into each page at build time |
+| `site.config.ts` | Address, page list and downloads |
+| `vite.config.ts` | Builds the pages; also writes `sitemap.xml`, `robots.txt` and the questions' search data |
+| `src/` | The stylesheet and the script (video play and pause, the headline shuffle, the docs section marker) |
+| `public/art/` | The hand-drawn pictures, from `assets/hand-drawn/` at the root, cropped and saved as WebP |
+| `public/shots/` | Screenshots of the real app, from `promotion/screens/`, at 640 and 1280 pixels wide |
+| `public/media/` | Feature videos, posters and brand stills, made by `scrapbean-videos/` |
+| `public/textures/`, `public/stickers/` | Paper textures and stickers copied from the app |
 | `dist/` | The built site; not kept in the repository |
 
-## Pictures for the site
+## How it is put together
 
-Screenshots of the real app are made by `promotion/make/` at the repository root and land in `promotion/`,
-which is not kept in the repository. Copy the ones the site uses into `public/` here. Before publishing, read
-`promotion/README.md`: some photos need their authors credited, and the pictures of people need your say-so.
+- **Every word is in the HTML.** Nothing is drawn by script, so search engines and people without scripts get the
+  whole page. Each page has its own title, description, canonical link, social card and structured data. The
+  questions on the home page are turned into `FAQPage` data when the site is built, so the two cannot disagree.
+- **It runs the full width of the screen.** There is no centred column. The gap at each side (`--side` in
+  `src/style.css`) and the number of columns grow with the screen, from a phone to a very wide monitor.
+- **One look, light only.** Several of the hand drawings are dark lines and would vanish on a dark page.
+- **It shares nothing with the app at build time.** It does not import from the app's `src/`; what it borrows
+  (textures, stickers, colours) is copied here.
 
-The website shares nothing with the app at build time: it does not import from the app's `src/`.
+## Credits to keep
+
+Some sample photos in the screenshots are CC BY and their authors are named on the About page. Keep that list
+when changing which screenshots are shown; the full list is in `promotion/CREDITS.md`.
