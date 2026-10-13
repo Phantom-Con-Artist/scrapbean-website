@@ -19,7 +19,7 @@ SHOTS = {
     'moving-2-a-wet-sunday': 'sound', 'hobby-garden-2-harvest': 'garden', 'library': 'library',
     'mode-reading': 'mode-reading', 'mode-edit': 'mode-edit', 'mode-customize-themes': 'mode-customize-themes',
     'mode-customize-backgrounds': 'mode-customize-backgrounds', 'mode-customize-stickers': 'mode-customize-stickers',
-    'mode-customize-border': 'mode-customize-border', 'mode-customize-note': 'mode-customize-note',
+    'mode-customize-border': 'mode-customize-border', 'mode-customize-note': 'mode-customize-note', 'mode-save': 'mode-save',
 }
 CLOSE_UPS = {'mode-customize-backgrounds', 'mode-customize-stickers', 'mode-customize-border', 'mode-customize-note'}
 # The strip at the top of a screenshot that holds the window's own buttons.

@@ -194,6 +194,17 @@ h3 { font: 700 1.5rem/1.2 var(--ui); letter-spacing: -0.01em; }
 .drawer > p { margin-top: 24px; }
 .more { font-weight: 650; }
 
+/* Export and share */
+#share { padding-top: 0; }
+.share { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); align-items: center; gap: clamp(36px, 6vw, 110px); }
+.exports { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; margin-top: 34px; }
+.exports li { padding: 18px 18px 20px; background: var(--grain), #f9dc5c; box-shadow: var(--drop); rotate: -1deg; border-radius: 2px 2px 14px 2px / 2px 2px 26px 2px; }
+.exports li:nth-child(2) { background: var(--grain), #bfe3d0; rotate: 0.8deg; }
+.exports li:nth-child(3) { background: var(--grain), #f9c4cf; rotate: -0.5deg; }
+.exports h3 { font: 700 1.3rem/1.2 var(--hand); }
+.exports p { margin-top: 8px; font-size: 0.97rem; line-height: 1.5; }
+.share-note { max-width: 38em; margin-top: 28px; color: var(--soft); }
+
 /* Free: the mat again, with a till receipt on it */
 .is-mat {
   color: var(--cream);
@@ -323,6 +334,7 @@ code { padding: 1px 6px; border-radius: 4px; background: rgb(40 25 10 / 0.08); f
   .steps { grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 52px 36px; }
   .modes { grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 52px 36px; }
   .free { grid-template-columns: minmax(0, 1fr); }
+  .share { grid-template-columns: minmax(0, 1fr); }
   .receipt { max-width: 340px; }
   .doc-wrap { grid-template-columns: minmax(0, 1fr); gap: 32px; }
   .toc { position: static; max-height: none; columns: 2; }
@@ -354,6 +366,12 @@ code { padding: 1px 6px; border-radius: 4px; background: rgb(40 25 10 / 0.08); f
   *, *::before, *::after { transition: none !important; }
 }
 
+@media (max-width: 1300px) {
+  .exports { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 960px) and (min-width: 700px) {
+  .exports { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
 @media (max-width: 1200px) {
   .deep { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }

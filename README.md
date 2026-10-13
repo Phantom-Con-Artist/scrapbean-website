@@ -29,7 +29,7 @@ Or from this folder: `npm run dev`, `npm run build`, `npm run preview`.
 
 | Path | What it is |
 | --- | --- |
-| `index.html` | Home: tagline, what it is, Edit and Customize, who it is for, features, free, questions, coming soon |
+| `index.html` | Home: tagline, what it is, Edit and Customize, who it is for, features, export and share, free, questions, coming soon |
 | `docs/index.html` | Documentation, one long page with a list of sections |
 | `about/index.html` | About and credits |
 | `404.html` | The page shown for a wrong address |
