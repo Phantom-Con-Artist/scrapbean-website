@@ -11,9 +11,9 @@ Node.js 22.12 or newer.
 
 ```sh
 npm install
-npm run dev       # http://127.0.0.1:5174
+npm run dev       # http://127.0.0.1:5180
 npm run build     # checks the types, then writes dist/
-npm run preview   # serves the built site on http://127.0.0.1:5175
+npm run preview   # serves the built site on http://127.0.0.1:5181
 ```
 
 ## Publish it
