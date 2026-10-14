@@ -183,7 +183,7 @@ h3 { font: 700 1.5rem/1.2 var(--ui); letter-spacing: -0.01em; }
 .bring p { max-width: 40em; margin-top: 10px; color: var(--soft); }
 .bring .tags { padding-right: 0; }
 .bring.box > p { max-width: 46em; margin-top: 22px; }
-#plugins { padding-top: 0; }
+/* Plugins follow the green band of the free section, so they keep the usual gap above. */
 .doc pre { margin-top: 16px; padding: 16px 18px; overflow-x: auto; background: var(--grain), var(--sheet); border-radius: 4px; box-shadow: var(--drop); font: 0.9rem/1.55 ui-monospace, 'Cascadia Mono', Menlo, monospace; }
 .doc pre code { padding: 0; background: none; font: inherit; overflow-wrap: normal; }
 
@@ -433,4 +433,18 @@ code { padding: 1px 6px; border-radius: 4px; background: rgb(40 25 10 / 0.08); f
 @media (min-width: 1100px) {
   .phone-intro { display: grid; grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.25fr); align-items: center; gap: clamp(40px, 5vw, 96px); }
   .phone-intro .phone-film { margin-top: 0; }
+}
+
+/* A line under a small heading that groups the phone's films. */
+.group-say { max-width: 38em; margin-top: 10px; color: var(--soft); font: 500 1.08rem/1.5 var(--hand); }
+.is-phone .deep-title + .shows { margin-top: 36px; }
+.is-phone .group-say + .shows { margin-top: 36px; }
+
+/* Sharing: the phone's way sits under the computer's, the two phones beside their words. */
+.share-phone { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: clamp(28px, 4vw, 80px); margin-top: clamp(56px, 6vw, 96px); }
+.share-phone h3 { font: 700 clamp(1.5rem, 2.4vw, 2rem)/1.2 var(--hand); }
+.share-phone .handsets { margin: 0; padding: 26px 6px 18px; overflow: visible; }
+@media (max-width: 960px) {
+  .share-phone { grid-template-columns: minmax(0, 1fr); }
+  .share-phone .handsets { margin: 0 calc(var(--side) * -1); padding: 26px var(--side) 30px; overflow-x: auto; }
 }
