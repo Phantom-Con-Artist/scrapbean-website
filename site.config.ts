@@ -8,9 +8,10 @@ export const site = {
   pages: ['/', '/docs/', '/about/'],
 };
 
-/** One entry per system. Leave `href` empty until that download exists: the card then says "Coming soon". */
+/** One entry per system, the phone included. Leave `href` empty until that download exists: the card then says "Coming soon". */
 export const downloads = [
   { system: 'Windows', needs: 'Windows 10 or newer', href: '' },
   { system: 'macOS', needs: 'macOS 12 or newer', href: '' },
   { system: 'Linux', needs: 'Most 64-bit desktops', href: '' },
+  { system: 'Android', needs: 'Android 7 or newer', href: '' },
 ];

@@ -1,14 +1,18 @@
-"""Prepares the website's pictures. Run from the repository root: python3 scrapbean-website/scripts/pictures.py
+"""Prepares the website's pictures. Run from the repository root: python3 apps/website/scripts/pictures.py
 
 - assets/hand-drawn/*.png  -> public/art/*.webp, cropped to the drawing
 - promotion/screens/*.png  -> public/shots/<name>-640.webp and -1280.webp (only when promotion/ is there)
+- promotion/phone/*.png    -> public/shots/phone-<name>-360.webp and -720.webp (made by npm run videos:phone)
 - public/media/*.jpg       -> made no wider than 1152 px, the most a video's first picture is ever shown at
+
+Give the names of the steps to run only those: python3 apps/website/scripts/pictures.py phones
 """
+import sys
 from pathlib import Path
 from PIL import Image
 
-ROOT = Path(__file__).resolve().parents[2]
-SITE = ROOT / 'scrapbean-website' / 'public'
+ROOT = Path(__file__).resolve().parents[3]
+SITE = ROOT / 'apps' / 'website' / 'public'
 
 # Screenshot in promotion/screens/ -> the name the site uses.
 SHOTS = {
@@ -60,6 +64,19 @@ def shots():
         print('shot', name)
 
 
+def phones():
+    screens = ROOT / 'promotion' / 'phone'
+    if not screens.is_dir():
+        print('promotion/phone is not here; phone screenshots left as they are')
+        return
+    for file in sorted(screens.glob('*.png')):
+        picture = Image.open(file).convert('RGB')
+        for width in (720, 360):
+            small = picture.resize((width, round(picture.height * width / picture.width)), Image.LANCZOS)
+            small.save(SITE / 'shots' / f'phone-{file.stem}-{width}.webp', quality=80, method=6)
+        print('phone', file.stem)
+
+
 def posters():
     for file in sorted((SITE / 'media').glob('*.jpg')):
         picture = Image.open(file)
@@ -72,6 +89,6 @@ def posters():
 if __name__ == '__main__':
     for folder in ('art', 'shots'):
         (SITE / folder).mkdir(parents=True, exist_ok=True)
-    drawings()
-    shots()
-    posters()
+    steps = {'drawings': drawings, 'shots': shots, 'phones': phones, 'posters': posters}
+    for name in sys.argv[1:] or steps:
+        steps[name]()

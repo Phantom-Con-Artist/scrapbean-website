@@ -278,10 +278,11 @@ h3 { font: 700 1.5rem/1.2 var(--ui); letter-spacing: -0.01em; }
   /* A ring where the cup stood. */
   #faq { background: url('/textures/coffee-ring.svg') left calc(var(--side) + 110px) top 330px / 170px no-repeat; }
 }
-.gets { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: end; gap: clamp(18px, 3vw, 56px); margin-top: 44px; }
+.gets { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); align-items: end; gap: clamp(18px, 3vw, 56px); margin-top: 44px; }
 .get { display: grid; justify-items: center; gap: 14px; padding: 34px 20px 28px; background: var(--grain), var(--sheet); border-radius: 4px 4px 0 0; box-shadow: var(--drop); text-align: center; transform-origin: bottom center; rotate: -0.7deg; }
 .get:nth-child(2) { rotate: 0.6deg; }
 .get:nth-child(3) { rotate: -0.3deg; }
+.get:nth-child(4) { rotate: 0.9deg; }
 .get small { font: 500 1rem/1.4 var(--hand); color: var(--soft); }
 .get.is-soon .button { background: #ebe2d0; border-color: rgb(40 25 10 / 0.25); box-shadow: inset 0 2px 4px rgb(40 25 10 / 0.25); color: var(--soft); cursor: default; translate: none; }
 .gets-note { margin-top: 34px; color: var(--soft); }
@@ -415,4 +416,21 @@ code { padding: 1px 6px; border-radius: 4px; background: rgb(40 25 10 / 0.08); f
   body { font-size: 1.375rem; }
   .wall { grid-template-columns: repeat(auto-fill, minmax(480px, 1fr)); }
   .deal { font-size: 6rem; }
+}
+
+/* The phone app: screenshots held in a phone's dark rim, in a row a thumb can scroll */
+.handsets { display: flex; gap: clamp(26px, 3vw, 48px); margin: 56px calc(var(--side) * -1) 0; padding: 26px var(--side) 34px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding: 0 var(--side); scrollbar-width: thin; }
+.handsets li { flex: none; width: clamp(190px, 21vw, 250px); scroll-snap-align: start; rotate: var(--turn, 0deg); transition: rotate 0.25s, scale 0.25s; }
+.handsets li:hover { rotate: 0deg; scale: 1.03; }
+.snap.handset { padding: 8px; border-radius: 30px; background: #1c1815; box-shadow: inset 0 0 0 1.5px #3a332d, var(--drop); rotate: none; }
+.snap.handset > img { border-radius: 23px; aspect-ratio: 360 / 800; object-fit: cover; }
+.snap.handset figcaption { padding: 12px 6px 4px; color: #f4eee2; text-align: center; }
+.handset .pin { top: -10px; }
+.is-phone .shows { margin-top: 40px; }
+@media (max-width: 1200px) and (min-width: 961px) { .gets { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.phone-film { margin-top: 48px; }
+/* On a wide screen the words sit beside the film, as in the hero. */
+@media (min-width: 1100px) {
+  .phone-intro { display: grid; grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.25fr); align-items: center; gap: clamp(40px, 5vw, 96px); }
+  .phone-intro .phone-film { margin-top: 0; }
 }
